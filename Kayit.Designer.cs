@@ -28,118 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kayit));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtAdi = new System.Windows.Forms.TextBox();
+            this.TxtMail = new System.Windows.Forms.TextBox();
+            this.TxtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.TxtSifre = new System.Windows.Forms.TextBox();
+            this.TxtSifre2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 125);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(93, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 15);
+            this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanici Adi:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 161);
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(144, 260);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 15);
+            this.label2.Size = new System.Drawing.Size(44, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sifre:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 197);
+            this.label3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(103, 296);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
+            this.label3.Size = new System.Drawing.Size(91, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Sifre tekrar:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 58);
+            this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(155, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 15);
+            this.label4.Size = new System.Drawing.Size(33, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ad:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(124, 94);
+            this.label5.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(145, 188);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 15);
+            this.label5.Size = new System.Drawing.Size(43, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Mail:";
             // 
-            // textBox1
+            // TxtAdi
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 50);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 23);
-            this.textBox1.TabIndex = 5;
+            this.TxtAdi.Location = new System.Drawing.Point(241, 147);
+            this.TxtAdi.Multiline = true;
+            this.TxtAdi.Name = "TxtAdi";
+            this.TxtAdi.Size = new System.Drawing.Size(159, 23);
+            this.TxtAdi.TabIndex = 5;
             // 
-            // textBox2
+            // TxtMail
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 86);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 23);
-            this.textBox2.TabIndex = 6;
+            this.TxtMail.Location = new System.Drawing.Point(241, 183);
+            this.TxtMail.Multiline = true;
+            this.TxtMail.Name = "TxtMail";
+            this.TxtMail.Size = new System.Drawing.Size(159, 23);
+            this.TxtMail.TabIndex = 6;
             // 
-            // textBox3
+            // TxtKullaniciAdi
             // 
-            this.textBox3.Location = new System.Drawing.Point(184, 122);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 23);
-            this.textBox3.TabIndex = 7;
+            this.TxtKullaniciAdi.Location = new System.Drawing.Point(241, 219);
+            this.TxtKullaniciAdi.Multiline = true;
+            this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
+            this.TxtKullaniciAdi.Size = new System.Drawing.Size(159, 23);
+            this.TxtKullaniciAdi.TabIndex = 7;
             // 
-            // textBox4
+            // TxtSifre
             // 
-            this.textBox4.Location = new System.Drawing.Point(184, 158);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 23);
-            this.textBox4.TabIndex = 8;
+            this.TxtSifre.Location = new System.Drawing.Point(241, 255);
+            this.TxtSifre.Multiline = true;
+            this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.Size = new System.Drawing.Size(159, 23);
+            this.TxtSifre.TabIndex = 8;
             // 
-            // textBox5
+            // TxtSifre2
             // 
-            this.textBox5.Location = new System.Drawing.Point(184, 189);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(159, 23);
-            this.textBox5.TabIndex = 9;
+            this.TxtSifre2.Location = new System.Drawing.Point(241, 296);
+            this.TxtSifre2.Multiline = true;
+            this.TxtSifre2.Name = "TxtSifre2";
+            this.TxtSifre2.Size = new System.Drawing.Size(159, 23);
+            this.TxtSifre2.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(276, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 32);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Kayit Ol";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Kayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(800, 635);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TxtSifre2);
+            this.Controls.Add(this.TxtSifre);
+            this.Controls.Add(this.TxtKullaniciAdi);
+            this.Controls.Add(this.TxtMail);
+            this.Controls.Add(this.TxtAdi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Kayit";
             this.Text = "Kayit";
             this.ResumeLayout(false);
@@ -154,10 +176,11 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox TxtAdi;
+        private TextBox TxtMail;
+        private TextBox TxtKullaniciAdi;
+        private TextBox TxtSifre;
+        private TextBox TxtSifre2;
+        private Button button1;
     }
 }

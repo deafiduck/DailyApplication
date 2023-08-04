@@ -44,11 +44,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(139, 160);
+            this.label1.Location = new System.Drawing.Point(97, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 50);
+            this.label1.Size = new System.Drawing.Size(175, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanici Adi:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -60,11 +60,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(187, 215);
+            this.label2.Location = new System.Drawing.Point(195, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 50);
+            this.label2.Size = new System.Drawing.Size(77, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Sifre:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -76,7 +76,7 @@
             this.textBox1.Location = new System.Drawing.Point(280, 176);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 23);
+            this.textBox1.Size = new System.Drawing.Size(170, 23);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
@@ -86,7 +86,7 @@
             this.textBox2.Location = new System.Drawing.Point(280, 231);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 23);
+            this.textBox2.Size = new System.Drawing.Size(170, 23);
             this.textBox2.TabIndex = 3;
             // 
             // button1
@@ -95,11 +95,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Gabriola", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button1.Location = new System.Drawing.Point(380, 272);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 41);
+            this.button1.Size = new System.Drawing.Size(70, 41);
             this.button1.TabIndex = 4;
             this.button1.Text = "Giris";
             this.button1.UseVisualStyleBackColor = false;
@@ -111,11 +111,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Gabriola", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.button2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button2.Location = new System.Drawing.Point(280, 272);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 41);
+            this.button2.Size = new System.Drawing.Size(66, 41);
             this.button2.TabIndex = 5;
             this.button2.Text = "Kayit";
             this.button2.UseVisualStyleBackColor = false;

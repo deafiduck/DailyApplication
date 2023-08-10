@@ -12,6 +12,8 @@ namespace MyDaily
 {
     public partial class Kayit : Form
     {
+        String sifre1;
+        String sifre2;
         public Kayit()
         {
             InitializeComponent();
@@ -45,6 +47,10 @@ namespace MyDaily
         private void TxtSifre2_TextChanged(object sender, EventArgs e)
         {
 
+            if (sifre1 != sifre2)
+            {
+                //hata ver
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,6 +74,11 @@ namespace MyDaily
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtSifre2_TextChanged_1(object sender, EventArgs e)
         {
 
         }

@@ -11,7 +11,7 @@ namespace MyDaily
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());//projenin baþladýðý yeri  gösterir
+            Application.Run(new AnaMenu());//projenin baþladýðý yeri  gösterir
 
             
         }

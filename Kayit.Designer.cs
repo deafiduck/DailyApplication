@@ -131,6 +131,7 @@
             this.TxtSifre2.Name = "TxtSifre2";
             this.TxtSifre2.Size = new System.Drawing.Size(159, 23);
             this.TxtSifre2.TabIndex = 9;
+            this.TxtSifre2.TextChanged += new System.EventHandler(this.TxtSifre2_TextChanged_1);
             // 
             // button1
             // 

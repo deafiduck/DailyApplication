@@ -7,18 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
+
 
 namespace MyDaily
 {
     public partial class Kayit : Form
     {
-        String sifre1;
-        String sifre2;
+        String sifre1="";
+        String sifre2="";
+
+        public string conString = "Data Source=DESKTOP-N5A035R;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
         public Kayit()
         {
             InitializeComponent();
         }
 
+       
         private void Kayit_Load(object sender, EventArgs e)
         {
 
@@ -81,6 +88,20 @@ namespace MyDaily
         private void TxtSifre2_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                string q = "insert into Test(adi,mail,kullaniciAdi,sifre)values( " +TxtAdi.Text.ToString()+ "')" + TxtMail.Text.ToString()+ "')"+TxtKullaniciAdi.Text.ToString()+ "')" + TxtSifre.Text.ToString()+"')";
+                SqlCommand cmd=new SqlCommand(q,con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Connection made Succesfully");
+
+            }
         }
     }
 }

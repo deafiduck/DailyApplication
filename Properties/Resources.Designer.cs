@@ -59,5 +59,15 @@ namespace MyDaily.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap B2vg9eTCIAAZH2d {
+            get {
+                object obj = ResourceManager.GetObject("B2vg9eTCIAAZH2d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

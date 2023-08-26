@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.Sql;
+using System.Data.SqlClient;
 namespace MyDaily
 {
     public partial class AnaMenu : Form

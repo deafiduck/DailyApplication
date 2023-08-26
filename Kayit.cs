@@ -11,6 +11,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 
 
+
 namespace MyDaily
 {
     public partial class Kayit : Form
@@ -18,8 +19,8 @@ namespace MyDaily
         String sifre1="";
         String sifre2="";
 
-      //  public string conString = "Data Source=DESKTOP-N5A035R;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        SqlConnection baglanti= new SqlConnection("Data Source=DESKTOP-N5A035R;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+       public string connectionString = "Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection baglanti= new SqlConnection("Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public Kayit()
         {
             InitializeComponent();
@@ -90,47 +91,67 @@ namespace MyDaily
 
         }
 
-        private void verileriGöster()
-        {
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("Select *FKullaniciKayıt", baglanti);
-             
-        }
+       
         private void button1_Click(object sender, EventArgs e)//kayıt etme butonu
         {
+            using (SqlConnection baglanti = new SqlConnection(connectionString))
+            {
+                baglanti.Open();
 
-          //  baglanti.Open();
-            //  SqlCommand komut = new SqlCommand("Select from KullaniciKayıt", baglanti);
+                string sorgu = "INSERT INTO KullaniciEkle (KullaniciAdi, KullaniciMail, Ad, KullaniciSifre) VALUES (@KullaniciAdi, @KullaniciMail, @Ad, @KullaniciSifre)";
 
+                using (SqlCommand komut = new SqlCommand(sorgu, baglanti))
+                {
+                    komut.Parameters.AddWithValue("@KullaniciAdi", TxtKullaniciAdi.Text);
+                    komut.Parameters.AddWithValue("@KullaniciMail", TxtMail.Text);
+                    komut.Parameters.AddWithValue("@Ad", TxtAdi.Text);
+                    komut.Parameters.AddWithValue("@KullaniciSifre", TxtSifre.Text);
 
-            /* SqlCommand komut = new SqlCommand("insert into KullaniciKayıt (KullaniciAdi,KullaniciMail,Ad,KullaniciSifre)values(" + TxtKullaniciAdi.Text+"','"+TxtMail.Text+"','"+TxtAdi.Text+"','"+TxtSifre.Text+"')'",baglanti);
+                    komut.ExecuteNonQuery();
+                }
+            }
+           /* baglanti.Open();
+            
+             SqlCommand komut = new SqlCommand("insert into KullaniciEkle (KullaniciAdi,KullaniciMail,Ad,KullaniciSifre) values('" + TxtKullaniciAdi.Text.ToString() + "'" + TxtMail.Text.ToString() + "'" + TxtAdi.Text.ToString() + "'" + TxtSifre.Text.ToString() + ")", baglanti);
              komut.Connection = baglanti;
              komut.ExecuteNonQuery();
-             baglanti.Close();*/
-            /* SqlConnection con = new SqlConnection(conString);
-             con.Open();
-             if (con.State == System.Data.ConnectionState.Open)
-             {
-                 string q = "insert into Test(KullaniciAdi,KullaniciMail,Ad,KullaniciSifre) values('" + TxtKullaniciAdi.Text.ToString() + "'" + TxtMail.Text.ToString() + "'" + TxtAdi.Text.ToString() + "'" + TxtSifre.Text.ToString()+"')";
-                 SqlCommand cmd=new SqlCommand(q,con);
-                 cmd.ExecuteNonQuery();
-                 MessageBox.Show("Connection made Succesfully");
+             baglanti.Close();
+           */
 
-             }*/
 
-        baglanti.Open();
-        string query = "INSERT INTO KullaniciKayıt (KullaniciAdi, KullaniciMail, Ad, KullaniciSifre) VALUES (@KullaniciAdi, @KullaniciMail, @Ad, @KullaniciSifre)";
-        SqlCommand komut = new SqlCommand(query, baglanti);
 
-        komut.Parameters.AddWithValue("@KullaniciAdi", TxtKullaniciAdi.Text);
-        komut.Parameters.AddWithValue("@KullaniciMail", TxtMail.Text);
-        komut.Parameters.AddWithValue("@Ad", TxtAdi.Text);
-        komut.Parameters.AddWithValue("@KullaniciSifre", TxtSifre.Text);
 
-        komut.ExecuteNonQuery();
+            /*
+             SqlCommand komut = new SqlCommand("Select from KullaniciKayit", baglanti);
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                string q = "insert into KullaniciKayit (KullaniciAdi,KullaniciMail,Ad,KullaniciSifre) values('" + TxtKullaniciAdi.Text.ToString() + "'" + TxtMail.Text.ToString() + "'" + TxtAdi.Text.ToString() + "'" + TxtSifre.Text.ToString()+")";
+                SqlCommand cmd=new SqlCommand(q,con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Connection made Succesfully");
 
-        baglanti.Close();
+            }*/
 
-}
-}
+            /*        baglanti.Open();
+                    string query = "INSERT INTO KullaniciKayit (KullaniciAdi, KullaniciMail, Ad, KullaniciSifre) VALUES (@KullaniciAdi, @KullaniciMail, @Ad, @KullaniciSifre)";
+                    SqlCommand komut = new SqlCommand(query, baglanti);
+
+                    komut.Parameters.AddWithValue("@KullaniciAdi", TxtKullaniciAdi.Text);
+                    komut.Parameters.AddWithValue("@KullaniciMail", TxtMail.Text);
+                    komut.Parameters.AddWithValue("@Ad", TxtAdi.Text);
+                    komut.Parameters.AddWithValue("@KullaniciSifre", TxtSifre.Text);
+
+                    komut.ExecuteNonQuery();
+
+                    baglanti.Close();*/
+
+        }
+
+        private void Kayit_Load_1(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -166,6 +166,7 @@
             this.MinimizeBox = false;
             this.Name = "Kayit";
             this.Text = "Kayit";
+            this.Load += new System.EventHandler(this.Kayit_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

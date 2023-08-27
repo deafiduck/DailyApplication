@@ -14,7 +14,7 @@ namespace MyDaily
     public partial class AnaMenu : Form
     {
 
-        public string connectionString = "Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //public string connectionString = "Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public AnaMenu()
         {
             InitializeComponent();
@@ -36,8 +36,8 @@ namespace MyDaily
         {
             
                 
-
-                SqlConnection baglanti = new SqlConnection(connectionString);
+                Kayit KayitSayfasi=new Kayit();
+                SqlConnection baglanti = new SqlConnection(KayitSayfasi.connectionString);
                     baglanti.Open();
 
                     string sql = "Select * from KullaniciEkle where KullaniciAdi=@adi AND KullaniciSifre=@sifre";

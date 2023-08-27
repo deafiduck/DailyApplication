@@ -40,6 +40,7 @@
             this.TxtSifre = new System.Windows.Forms.TextBox();
             this.TxtSifre2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -121,16 +122,20 @@
             this.TxtSifre.Location = new System.Drawing.Point(241, 255);
             this.TxtSifre.Multiline = true;
             this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.PasswordChar = '*';
             this.TxtSifre.Size = new System.Drawing.Size(159, 23);
             this.TxtSifre.TabIndex = 8;
+            this.TxtSifre.UseSystemPasswordChar = true;
             // 
             // TxtSifre2
             // 
             this.TxtSifre2.Location = new System.Drawing.Point(241, 296);
             this.TxtSifre2.Multiline = true;
             this.TxtSifre2.Name = "TxtSifre2";
+            this.TxtSifre2.PasswordChar = '*';
             this.TxtSifre2.Size = new System.Drawing.Size(159, 23);
             this.TxtSifre2.TabIndex = 9;
+            this.TxtSifre2.UseSystemPasswordChar = true;
             this.TxtSifre2.TextChanged += new System.EventHandler(this.TxtSifre2_TextChanged_1);
             // 
             // button1
@@ -144,6 +149,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(426, 300);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(64, 25);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "Gizle";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Kayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -151,6 +168,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 635);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtSifre2);
             this.Controls.Add(this.TxtSifre);
@@ -185,5 +203,6 @@
         private TextBox TxtSifre;
         private TextBox TxtSifre2;
         private Button button1;
+        private CheckBox checkBox1;
     }
 }

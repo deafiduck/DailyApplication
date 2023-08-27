@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
-
-
+using System.Drawing.Text;
 
 namespace MyDaily
 {
@@ -20,12 +19,13 @@ namespace MyDaily
         String sifre2="";
 
        public string connectionString = "Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        SqlConnection baglanti= new SqlConnection("Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        //SqlConnection baglanti= new SqlConnection("Data Source=DESKTOP-N5A035R;Initial Catalog=Daily;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public Kayit()
         {
             InitializeComponent();
         }
 
+        //Tarih girişşiyle ilgili sorun Murat yücedağ 6. ders 2. dkika
        
         private void Kayit_Load(object sender, EventArgs e)
         {
@@ -55,10 +55,7 @@ namespace MyDaily
         private void TxtSifre2_TextChanged(object sender, EventArgs e)
         {
 
-            if (sifre1 != sifre2)
-            {
-                //hata ver
-            }
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -91,7 +88,22 @@ namespace MyDaily
 
         }
 
-       
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                TxtSifre.UseSystemPasswordChar = true;
+                TxtSifre2.UseSystemPasswordChar = true;
+                checkBox1.Text = "Gizle";
+
+            }
+            else
+            {
+                TxtSifre.UseSystemPasswordChar = false;
+                TxtSifre2.UseSystemPasswordChar = false;
+                checkBox1.Text = "Göster";
+            }
+        }
         private void button1_Click(object sender, EventArgs e)//kayıt etme butonu
         {
             using (SqlConnection baglanti = new SqlConnection(connectionString))
@@ -107,34 +119,25 @@ namespace MyDaily
                     komut.Parameters.AddWithValue("@Ad", TxtAdi.Text);
                     komut.Parameters.AddWithValue("@KullaniciSifre", TxtSifre.Text);
 
-                    komut.ExecuteNonQuery();
+                    sifre1 = TxtSifre.Text;
+                    sifre2=TxtSifre2.Text;
+                    if (sifre1 != sifre2)
+                    {
+                        MessageBox.Show("Şifreleriniz hatalı!");
+                    }
+                    else
+                    {
+                        komut.ExecuteNonQuery();
+                        MessageBox.Show("Başarıyla kaydoldunuz!");
+                    }
+                
                 }
+                baglanti.Close();
+                
             }
-           /* baglanti.Open();
             
-             SqlCommand komut = new SqlCommand("insert into KullaniciEkle (KullaniciAdi,KullaniciMail,Ad,KullaniciSifre) values('" + TxtKullaniciAdi.Text.ToString() + "'" + TxtMail.Text.ToString() + "'" + TxtAdi.Text.ToString() + "'" + TxtSifre.Text.ToString() + ")", baglanti);
-             komut.Connection = baglanti;
-             komut.ExecuteNonQuery();
-             baglanti.Close();
-           */
-
-
-
-
-            /*
-             SqlCommand komut = new SqlCommand("Select from KullaniciKayit", baglanti);
-            SqlConnection con = new SqlConnection(conString);
-            con.Open();
-            if (con.State == System.Data.ConnectionState.Open)
-            {
-                string q = "insert into KullaniciKayit (KullaniciAdi,KullaniciMail,Ad,KullaniciSifre) values('" + TxtKullaniciAdi.Text.ToString() + "'" + TxtMail.Text.ToString() + "'" + TxtAdi.Text.ToString() + "'" + TxtSifre.Text.ToString()+")";
-                SqlCommand cmd=new SqlCommand(q,con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Connection made Succesfully");
-
-            }*/
-
-            /*        baglanti.Open();
+          
+            /*      baglanti.Open();
                     string query = "INSERT INTO KullaniciKayit (KullaniciAdi, KullaniciMail, Ad, KullaniciSifre) VALUES (@KullaniciAdi, @KullaniciMail, @Ad, @KullaniciSifre)";
                     SqlCommand komut = new SqlCommand(query, baglanti);
 
@@ -153,5 +156,7 @@ namespace MyDaily
         {
 
         }
+
+       
     }
 }

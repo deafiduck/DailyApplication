@@ -31,8 +31,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Kaydet = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,23 +57,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(508, 56);
+            this.dateTimePicker1.Location = new System.Drawing.Point(529, 238);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 23);
             this.dateTimePicker1.TabIndex = 3;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel1.Location = new System.Drawing.Point(587, 174);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(117, 23);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
             // 
             // Kaydet
             // 
@@ -86,14 +73,25 @@
             this.Kaydet.UseVisualStyleBackColor = true;
             this.Kaydet.Click += new System.EventHandler(this.Kaydet_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Bodoni MT", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(511, 614);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 28);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Çıkış";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Sayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MyDaily.Properties.Resources.B2vg9eTCIAAZH2d;
             this.ClientSize = new System.Drawing.Size(800, 646);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Kaydet);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
@@ -101,7 +99,6 @@
             this.Text = "Sayfa";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -109,8 +106,8 @@
 
         private PictureBox pictureBox1;
         private DateTimePicker dateTimePicker1;
-        private LinkLabel linkLabel1;
         private Button Kaydet;
         protected internal RichTextBox richTextBox1;
+        private Button button1;
     }
 }

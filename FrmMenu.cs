@@ -51,5 +51,12 @@ namespace MyDaily
             sr.Close();
             fs.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Kayit k=new Kayit();
+            k.Show();
+            this.Hide();
+        }
     }
 }

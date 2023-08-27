@@ -43,5 +43,12 @@ namespace MyDaily
             sw.Close();
             MessageBox.Show("basarili");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenu fm=new FrmMenu();
+            fm.Show();
+            this.Hide();
+        }
     }
 }

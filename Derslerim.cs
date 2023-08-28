@@ -12,6 +12,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyDaily
 {
+    public class DersBilgisi
+    {
+        public string DersKodu;
+        public int AKTS;
+        public int Kredi;
+    }
+
     public partial class Derslerim : Form
     {
 
@@ -26,22 +33,37 @@ namespace MyDaily
             SqlConnection baglanti = new SqlConnection(connectionString);
             baglanti.Open();
 
-            string sql = "SELECT DISTINCT DersAdi FROM Dersler WHERE Donem=@Donem";
+            string sql = "SELECT DersAdi, DersKodu, AKTS, Kredi FROM Dersler WHERE Donem=@Donem";
             SqlParameter prm1 = new SqlParameter("Donem", listBox1.Text);
 
             SqlCommand komut = new SqlCommand(sql, baglanti);
             komut.Parameters.Add(prm1);
+
+            Dictionary<string, DersBilgisi> dersBilgileri = new Dictionary<string, DersBilgisi>();
 
             using (SqlDataReader reader = komut.ExecuteReader())
             {
                 while (reader.Read())
                 {
                     string dersAdi = reader["DersAdi"].ToString();
-                    checkedListBox1.Items.Add(dersAdi);
+                    string dersKodu = reader["DersKodu"].ToString();
+                    int akts = Convert.ToInt32(reader["AKTS"]);
+                    int kredi = Convert.ToInt32(reader["Kredi"]);
+
+                    DersBilgisi bilgi = new DersBilgisi { DersKodu = dersKodu, AKTS = akts, Kredi = kredi };
+                    dersBilgileri[dersAdi] = bilgi;
                 }
             }
 
+            foreach (var kvp in dersBilgileri)
+            {
+                string dersBilgi = $"{kvp.Key} - Ders Kodu: {kvp.Value.DersKodu} - AKTS: {kvp.Value.AKTS} - Kredi: {kvp.Value.Kredi}";
+                checkedListBox1.Items.Add(dersBilgi);
+            }
+
             baglanti.Close();
+
+
 
 
 

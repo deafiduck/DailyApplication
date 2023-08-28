@@ -4,9 +4,6 @@
     <Compile Update="AnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Derslerim.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>

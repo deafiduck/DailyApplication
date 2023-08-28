@@ -64,9 +64,6 @@ namespace MyDaily
                 {
                     MessageBox.Show("Hatali giris");
                 }
-
-                
-                
             }
         }
     }

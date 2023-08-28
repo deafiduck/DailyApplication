@@ -2,6 +2,44 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "ADO.Net.Client.Annotations/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ADO.Net.Client.Core/1.4.5": {
+        "type": "package",
+        "dependencies": {
+          "ADO.Net.Client.Annotations": "1.2.0"
+        },
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ConnectionString/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/ConnectionString.dll": {}
+        },
+        "runtime": {
+          "lib/ConnectionString.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -150,6 +188,68 @@
     }
   },
   "libraries": {
+    "ADO.Net.Client.Annotations/1.2.0": {
+      "sha512": "UZsCQ6xAM+k4TLmP7Sa0q6wY5wM9wam8P812V7kOAYN909iOUWH+XWlQXgH3MSLDo66CERVnKSzk2/Gxmm12zw==",
+      "type": "package",
+      "path": "ado.net.client.annotations/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.annotations.1.2.0.nupkg.sha512",
+        "ado.net.client.annotations.nuspec",
+        "icon.png",
+        "lib/net5.0/ADO.Net.Client.Annotations.dll",
+        "lib/net5.0/ADO.Net.Client.Annotations.xml",
+        "lib/net6.0/ADO.Net.Client.Annotations.dll",
+        "lib/net6.0/ADO.Net.Client.Annotations.xml",
+        "lib/netstandard2.0/ADO.Net.Client.Annotations.dll",
+        "lib/netstandard2.0/ADO.Net.Client.Annotations.xml"
+      ]
+    },
+    "ADO.Net.Client.Core/1.4.5": {
+      "sha512": "jGogSIdeFWCIWq3+goEBlMcZLQCLI0MEnpsq/Xp5AeQeVSi1p4cjMjWmLvOYucjjBjRa1wJuilQ3Zs4UH1ubsg==",
+      "type": "package",
+      "path": "ado.net.client.core/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.core.1.4.5.nupkg.sha512",
+        "ado.net.client.core.nuspec",
+        "icon.png",
+        "lib/net462/ADO.Net.Client.Core.dll",
+        "lib/net462/ADO.Net.Client.Core.xml",
+        "lib/net5.0/ADO.Net.Client.Core.dll",
+        "lib/net5.0/ADO.Net.Client.Core.xml",
+        "lib/net6.0/ADO.Net.Client.Core.dll",
+        "lib/net6.0/ADO.Net.Client.Core.xml",
+        "lib/net7.0/ADO.Net.Client.Core.dll",
+        "lib/net7.0/ADO.Net.Client.Core.xml",
+        "lib/netstandard2.0/ADO.Net.Client.Core.dll",
+        "lib/netstandard2.0/ADO.Net.Client.Core.xml",
+        "lib/netstandard2.1/ADO.Net.Client.Core.dll",
+        "lib/netstandard2.1/ADO.Net.Client.Core.xml"
+      ]
+    },
+    "ConnectionString/2.0.0": {
+      "sha512": "F9bvtE3P4hoiRm627eiFaWyULG/mmkIpDn5Z6VxwoN0JFx5K8QaUJxV0XnqNCBLhF3zGCyPG6ax6ZC32iHULhg==",
+      "type": "package",
+      "path": "connectionstring/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "connectionstring.2.0.0.nupkg.sha512",
+        "connectionstring.nuspec",
+        "lib/ConnectionString.dll",
+        "lib/ConnectionString.pdb",
+        "lib/ConnectionString.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -466,6 +566,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "ADO.Net.Client.Core >= 1.4.5",
+      "ConnectionString >= 2.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -514,6 +616,14 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "ADO.Net.Client.Core": {
+            "target": "Package",
+            "version": "[1.4.5, )"
+          },
+          "ConnectionString": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.5, )"
@@ -541,5 +651,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ConnectionString 2.0.0' paketi, proje hedef çerçevesi 'net6.0-windows7.0' yerine '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' kullanılarak geri yüklendi. Bu paket projenizle tamamen uyumlu olmayabilir.",
+      "libraryId": "ConnectionString",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

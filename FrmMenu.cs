@@ -65,7 +65,7 @@ namespace MyDaily
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Derslerim d=new Derslerim();
+            DersDüzenle d=new DersDüzenle();
             d.Show();
             this.Hide();
         }

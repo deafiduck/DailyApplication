@@ -49,4 +49,4 @@ C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\obj\Debug\net6.0-window
 C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\bin\Debug\net6.0-windows\ADO.Net.Client.Annotations.dll
 C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\bin\Debug\net6.0-windows\ADO.Net.Client.Core.dll
 C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\bin\Debug\net6.0-windows\ConnectionString.dll
-C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\obj\Debug\net6.0-windows\MyDaily.DersBilgisi.resources
+C:\Users\zsser\Documents\GitHub\MyDaily\DailyApplication\obj\Debug\net6.0-windows\MyDaily.DersDüzenle.resources

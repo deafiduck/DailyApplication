@@ -43,7 +43,7 @@ namespace MyDaily
         {
 
             // listBox1 seçim değiştikçe checkedListBox1'i temizle
-            checkedListBox1.Items.Clear();
+           /* checkedListBox1.Items.Clear();
 
 
             SqlConnection baglanti = new SqlConnection(connectionString);
@@ -102,7 +102,7 @@ namespace MyDaily
 
 
 
-            baglanti.Close();
+            baglanti.Close();*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,6 +117,7 @@ namespace MyDaily
             //derslerin bilgileri yazacak
             // Seçilen dönem
             string donemBilgisi = numericUpDown2.Value.ToString();
+            
 
             // Veritabanı bağlantısı
             using (SqlConnection baglanti = new SqlConnection(connectionString))
@@ -125,30 +126,34 @@ namespace MyDaily
 
                 foreach (string secilenDers in checkedListBox2.CheckedItems)
                 {
-                    string[] parcalar = secilenDers.Split('-');
-                    string DersAdi = parcalar[0].Trim();
+                    
+                        string[] parcalar = secilenDers.Split('-');
+                        string DersAdi = parcalar[0].Trim();
+                    string sql3 = "SELECT DersAdi FROM Transkript2 Where KullaniciAdi=@KullaniciAdi";
+                   
+                        // Dersin zaten eklenip eklenmediğini kontrol etmek için bir sorgu
+                        string sql2 = "INSERT INTO Transkript2 (DersAdi, KullaniciAdi) SELECT @DersAdi, @KullaniciAdi " +
+                                      "WHERE NOT EXISTS (SELECT 1 FROM Transkript2 WHERE DersAdi = @DersAdi)";
 
-                    // Dersin zaten eklenip eklenmediğini kontrol etmek için bir sorgu
-                    string sql2 = "INSERT INTO Transkript2 (DersAdi, KullaniciAdi) SELECT @DersAdi, @KullaniciAdi " +
-                                  "WHERE NOT EXISTS (SELECT 1 FROM Transkript2 WHERE DersAdi = @DersAdi)";
+                        AnaMenu aa = new AnaMenu();
+                        SqlCommand komut2 = new SqlCommand(sql2, baglanti);
+                        komut2.Parameters.AddWithValue("@DersAdi", DersAdi);
+                    string kullaniciAdi2 = "Select KullaniciAdi from Transkript2 where Dersler from KullaniciAdi=@KullaniciAdi";
+                        komut2.Parameters.AddWithValue("@KullaniciAdi", kullaniciAdi2);
 
-                    AnaMenu aa = new AnaMenu();
-                    SqlCommand komut2 = new SqlCommand(sql2, baglanti);
-                    komut2.Parameters.AddWithValue("@DersAdi", DersAdi);
-                    komut2.Parameters.AddWithValue("@KullaniciAdi", "zss");
+                        int etkilenenSatirSayisi = komut2.ExecuteNonQuery();
 
-                    int etkilenenSatirSayisi = komut2.ExecuteNonQuery();
-
-                    if (etkilenenSatirSayisi > 0)
-                    {
-                        // Ders başarıyla eklendi
-                        MessageBox.Show($"{DersAdi} dersi transkripte eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        // Ders zaten ekli, işlem atlandı
-                        MessageBox.Show($"{DersAdi} dersi zaten transkripte ekli.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        if (etkilenenSatirSayisi > 0)
+                        {
+                            // Ders başarıyla eklendi
+                            MessageBox.Show($"{DersAdi} dersi transkripte eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            // Ders zaten ekli, işlem atlandı
+                            MessageBox.Show($"{DersAdi} dersi zaten transkripte ekli.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                   
                 }
             }
 

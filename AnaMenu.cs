@@ -60,10 +60,10 @@ namespace MyDaily
                     if (dt.Rows.Count > 0)//DataTable nesnesinin içinde en az bir satır varsa (yani sorgunun sonucunda eşleşen bir kayıt varsa), bu blok çalışır.
                     {
 
-                string a = "Select *from KullaniciEkle where KullaniciAdi=@adi";
-                     kullanici = "adi";
+               
+                     kullanici = textBox1.Text.ToString();
 
-                FrmMenu fm = new FrmMenu();
+                    FrmMenu fm = new FrmMenu();
                         fm.Show();
                          
                     }

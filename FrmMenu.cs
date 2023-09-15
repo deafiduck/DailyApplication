@@ -14,9 +14,12 @@ namespace MyDaily
     public partial class FrmMenu : Form
     {
         Sayfa s = new Sayfa();
-        public FrmMenu()
+        string kullanici;
+        public FrmMenu(string kullaniciAdi)
         {
+            
             InitializeComponent();
+            kullanici= kullaniciAdi;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,7 +68,7 @@ namespace MyDaily
 
         private void button5_Click(object sender, EventArgs e)
         {
-            DersDüzenle d=new DersDüzenle();
+            DersDüzenle d=new DersDüzenle(kullanici);
             d.Show();
             this.Hide();
         }

@@ -157,6 +157,11 @@ namespace MyDaily
 
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AnaMenu aa= new AnaMenu();
+            aa.Show();
+            this.Hide();
+        }
     }
 }

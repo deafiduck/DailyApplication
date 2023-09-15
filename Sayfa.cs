@@ -14,11 +14,12 @@ namespace MyDaily
     public partial class Sayfa : Form
     {
 
-       
 
+        string kullanici;
         public Sayfa()
         {
             InitializeComponent();
+            
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace MyDaily
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmMenu fm=new FrmMenu();
+            FrmMenu fm=new FrmMenu(kullanici);
             fm.Show();
             this.Hide();
         }

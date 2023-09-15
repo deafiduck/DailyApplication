@@ -42,11 +42,12 @@ namespace MyDaily
                     baglanti.Open();
 
                     string sql = "Select * from KullaniciEkle where KullaniciAdi=@adi AND KullaniciSifre=@sifre ";
-                //girilen textle eşleşen değerleri buluyorum ve prm1 ve prm2den aldığım değerlerin de aynı olduğunu görüyorum
+            //girilen textle eşleşen değerleri buluyorum ve prm1 ve prm2den aldığım değerlerin de aynı olduğunu görüyorum
+                    string kullanici2 = textBox1.Text.ToString();
                     SqlParameter prm1 = new SqlParameter("adi", textBox1.Text.Trim());
                     SqlParameter prm2 = new SqlParameter("sifre", textBox2.Text.Trim());
             
-
+               
                     SqlCommand komut = new SqlCommand(sql, baglanti);
                     komut.Parameters.Add(prm1);
                     komut.Parameters.Add(prm2);
@@ -59,18 +60,20 @@ namespace MyDaily
 
                     if (dt.Rows.Count > 0)//DataTable nesnesinin içinde en az bir satır varsa (yani sorgunun sonucunda eşleşen bir kayıt varsa), bu blok çalışır.
                     {
+                   
+                     kullanici = kullanici2;
 
-               
-                     kullanici = textBox1.Text.ToString();
-
-                    FrmMenu fm = new FrmMenu();
+                    FrmMenu fm = new FrmMenu(kullanici2);
                         fm.Show();
-                         
-                    }
+                   
+                
+
+            }
                     else
                 {
                     MessageBox.Show("Hatali giris");
                 }
+                    
             }
         }
     }

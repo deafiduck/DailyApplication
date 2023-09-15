@@ -69,5 +69,26 @@ namespace MyDaily.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap I_Fell_in_Love_with_a_Boy_in_a_Maid_Dress___Dreamnotfound___The_contact_warms_my_heart {
+            get {
+                object obj = ResourceManager.GetObject("I Fell in Love with a Boy in a Maid Dress - Dreamnotfound - The contact warms my " +
+                        "heart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap indir__13_ {
+            get {
+                object obj = ResourceManager.GetObject("indir (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
